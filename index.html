@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Llegué a casa...</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        button {
+            padding:12px 24px;
+            font-size: 18px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #128C7E;
     </style>
 </head>
 <body>
     <h1>Bienvenido a casa!...</h1>
     <p>Escanea el QR para notificar a tus contactos...</p>
     <!--Boton de prueba (simula el escaneo) -->
-    <button onclick = "enviarMensajes()"> Simular escaneo</button>
+    <button onclick = "enviarMensaje()">Enviar mensaje</button>
     <script>
-        function enviarMensajes() {
-            //Lista de contactos
-            const contactos = ["5216241684070"];
-
-            //Enviar mensaje a cada contacto via whatsapp
-            contactos.foreach(numero => {
-                const mensaje = encodeURIComponent("Ya llegué a casa!...");
-                window.open('https://wa.me/${numero}?text=${mensaje}', '_blank');
-            });
+        function enviarMensaje() {
+            const numero = "5216241684070";
+            const mensaje = encodeURIComponent("Ya llegué a casa!...");
+            const url = 'https://wa.me/${numero}?text=${mensaje}';
+            window.location.href = url;
         }
     </script>
 </body>
