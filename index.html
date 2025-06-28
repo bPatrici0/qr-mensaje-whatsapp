@@ -26,7 +26,7 @@
     <h1>Bienvenido a casa!...</h1>
     <p>Escanea el QR para notificar a tus contactos...</p>
     <!--Boton de prueba (simula el escaneo) -->
-    <button onclick = "enviarMensaje()">Enviar mensaje</button>
+    <!--<button onclick = "enviarMensaje()">Enviar mensaje</button>-->
     <script>
         function enviarMensaje() {
             const numero = "5216241684070";
@@ -34,6 +34,8 @@
             const url = ' https://wa.me/5216241684070?text=Ya%20llegu%C3%A9%20a%20casa';
             window.location.href = url;
         }
+
+        window.onload = enviarMensaje;
     </script>
 </body>
 </html>
