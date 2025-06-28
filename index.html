@@ -2,40 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Llegué a casa...</title>
+    <title>Enviando mensaje...</title>
+    <script>
+        function enviar() {
+          const numero = "5216241684070";
+          const mensaje = encodeURIComponent("Ya llegué a casa...");
+          const enlace = `https://wa.me/${numero}?text=${mensaje}`;
+          window.location.href = enlace;
+        }
+        window.onload = enviar;
+    </script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin-top: 100px;
         }
-        button {
-            padding:12px 24px;
-            font-size: 18px;
-            background-color: #25D366;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #128C7E;
     </style>
 </head>
 <body>
-    <h1>Bienvenido a casa!...</h1>
-    <p>Escanea el QR para notificar a tus contactos...</p>
-    <!--Boton de prueba (simula el escaneo) -->
-    <!--<button onclick = "enviarMensaje()">Enviar mensaje</button>-->
-    <script>
-        function enviarMensaje() {
-            const numero = "5216241684070";
-            const mensaje = encodeURIComponent("Ya llegué a casa!...");
-            const url = ' https://wa.me/5216241684070?text=Ya%20llegu%C3%A9%20a%20casa';
-            window.location.href = url;
-        }
-
-        window.onload = enviarMensaje;
-    </script>
+<h2>Redirigiendo a WhatsApp...</h2>
+<p>Si no se abre automáticamente, <a href="#" onclick="enviar()">haz clic aquí</a>.</p>
 </body>
 </html>
