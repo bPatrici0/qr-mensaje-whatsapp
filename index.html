@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Llegué a casa...</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a casa!...</h1>
+    <p>Escanea el QR para notificar a tus contactos...</p>
+    <!--Boton de prueba (simula el escaneo) -->
+    <button onclick = "enviarMensajes()"> Simular escaneo</button>
+    <script>
+        function enviarMensajes() {
+            //Lista de contactos
+            const contactos = ["5216241684070"];
+
+            //Enviar mensaje a cada contacto via whatsapp
+            contactos.foreach(numero => {
+                const mensaje = encodeURIComponent("Ya llegué a casa!...");
+                window.open('https://wa.me/${numero}?text=${mensaje}', '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
