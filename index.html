@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Enviando mensaje...</title>
+    <script> src="numeros.js"</script>
     <script>
         function enviar() {
-          const numero = "5216241684070";
-          const mensaje = encodeURIComponent("Ya llegué a casa...");
-          const enlace = `https://wa.me/${numero}?text=${mensaje}`;
-          window.location.href = enlace;
+            if(!numerosW || numerosW.length === 0) {
+                alert("No hay números disponibles");
+                return;
+            }
+
+            const numero = numerosW[0];
+            const mensaje = encodeURIComponent("Ya llegué a casa...");
+            const enlace = `https://wa.me/${numero}?text=${mensaje}`;
+            window.location.href = enlace;
         }
         window.onload = enviar;
     </script>
